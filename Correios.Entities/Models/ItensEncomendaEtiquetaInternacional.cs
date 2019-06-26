@@ -9,6 +9,6 @@ namespace Correios.Entities.Models
     public class ItensEncomendaEtiquetaInternacional
     {
         [XmlElement(ElementName = "itemEncomenda")]
-        public List<ItemEncomendaEtiquetaInternacional> ItemEncomenda { get; set; }
+        public ItemEncomendaEtiquetaInternacional[] ItemEncomenda { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using Correios.Entities.ExtendedModels;
 
 namespace Correios.Entities.Models
 {
@@ -8,8 +10,11 @@ namespace Correios.Entities.Models
     public class RemessaEtiquetaInternacional
     {
         [XmlElement(ElementName = "idioma")]
+        [Required(ErrorMessage = "{0} is required")]
+        [StringRange(AllowableValues = new[] { "PT", "EN" }, ErrorMessage = "{0} must be either 'PT' or 'EN'.")]
+
         public string Idioma { get; set; }
-        [XmlElement(ElementName = "encomendas")]
+        [XmlElement(ElementName = "encomendas")]        
         public EncomendasEtiquetaInternacional Encomendas { get; set; }
     }
 }
