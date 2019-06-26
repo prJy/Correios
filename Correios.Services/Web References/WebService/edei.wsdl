@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.edei.correios.com.br/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="edei" targetNamespace="http://service.edei.correios.com.br/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://service.edei.correios.com.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="WebServiceFaultInfo" type="tns:WebServiceFaultInfo" />
+      <xs:element name="agrupadorExpedicaoRetornoConsulta" type="tns:AgrupadorExpedicaoRetornoConsulta" />
+      <xs:element name="agrupadorFaturaEntregaRetornoConsulta" type="tns:AgrupadorFaturaEntregaRetornoConsulta" />
+      <xs:element name="agrupadorItemEncomenda" type="tns:AgrupadorItemEncomenda" />
+      <xs:element name="agrupadorItemRetornoConsultaEncomenda" type="tns:AgrupadorItemRetornoConsultaEncomenda" />
+      <xs:element name="agrupadorObjetoRetornoConsulta" type="tns:AgrupadorObjetoRetornoConsulta" />
+      <xs:element name="agrupadorRetorno" type="tns:AgrupadorRetorno" />
+      <xs:element name="agrupadorUnitizadorRetornoConsulta" type="tns:AgrupadorUnitizadorRetornoConsulta" />
+      <xs:element name="cancelarRotuloUnitizador" type="tns:cancelarRotuloUnitizador" />
+      <xs:element name="cancelarRotuloUnitizadorResponse" type="tns:cancelarRotuloUnitizadorResponse" />
+      <xs:element name="consultaFaturaEntrega" type="tns:consultaFaturaEntrega" />
+      <xs:element name="consultaFaturaEntregaResponse" type="tns:consultaFaturaEntregaResponse" />
+      <xs:element name="consultarEncomenda" type="tns:consultarEncomenda" />
+      <xs:element name="consultarEncomendaResponse" type="tns:consultarEncomendaResponse" />
+      <xs:element name="consultarRestricaoProibicaoItem" type="tns:consultarRestricaoProibicaoItem" />
+      <xs:element name="consultarRestricaoProibicaoItemResponse" type="tns:consultarRestricaoProibicaoItemResponse" />
+      <xs:element name="consultarUnitizador" type="tns:consultarUnitizador" />
+      <xs:element name="consultarUnitizadorResponse" type="tns:consultarUnitizadorResponse" />
+      <xs:element name="expedicaoRetornoConsulta" type="tns:expedicaoRetornoConsulta" />
+      <xs:element name="faturaEntregaRetornoConsulta" type="tns:faturaEntregaRetornoConsulta" />
+      <xs:element name="getVersao" type="tns:getVersao" />
+      <xs:element name="getVersaoResponse" type="tns:getVersaoResponse" />
+      <xs:element name="itemEncomenda" type="tns:ItemEncomenda" />
+      <xs:element name="itemRetornoConsultaEncomenda" type="tns:ItemRetornoConsultaEncomenda" />
+      <xs:element name="itemRetornoConsultaUnitizador" type="tns:ItemRetornoConsultaUnitizador" />
+      <xs:element name="itemRetornoEtiquetaInternacional" type="tns:ItemRetornoEtiquetaInternacional" />
+      <xs:element name="itemRetornoRestricaoProibicao" type="tns:ItemRetornoRestricaoProibicao" />
+      <xs:element name="itemRetornoRotuloUnitizador" type="tns:ItemRetornoRotuloUnitizador" />
+      <xs:element name="ocorrencia" type="tns:Ocorrencia" />
+      <xs:element name="retorno" type="tns:Retorno" />
+      <xs:element name="retornoCancelarRotuloUnitizador" type="tns:RetornoCancelarRotuloUnitizador" />
+      <xs:element name="retornoCodigoFatura" type="tns:RetornoCodigoFatura" />
+      <xs:element name="retornoConsultaEncomenda" type="tns:RetornoConsultaEncomenda" />
+      <xs:element name="retornoConsultaFaturaEntrega" type="tns:RetornoConsultaFaturaEntregaTO" />
+      <xs:element name="retornoConsultaUnitizador" type="tns:RetornoConsultaUnitizador" />
+      <xs:element name="retornoEtiquetaInternacional" type="tns:RetornoEtiquetaInternacional" />
+      <xs:element name="retornoRestricaoProibicao" type="tns:RetornoRestricaoProibicao" />
+      <xs:element name="retornoRotuloUnitizador" type="tns:RetornoRotuloUnitizador" />
+      <xs:element name="retornoSaldo" type="tns:RetornoSaldo" />
+      <xs:element name="solicitarCodigoEtiquetaInternacional" type="tns:solicitarCodigoEtiquetaInternacional" />
+      <xs:element name="solicitarCodigoEtiquetaInternacionalResponse" type="tns:solicitarCodigoEtiquetaInternacionalResponse" />
+      <xs:element name="solicitarCodigoFatura" type="tns:solicitarCodigoFatura" />
+      <xs:element name="solicitarCodigoFaturaResponse" type="tns:solicitarCodigoFaturaResponse" />
+      <xs:element name="solicitarRotuloUnitizador" type="tns:solicitarRotuloUnitizador" />
+      <xs:element name="solicitarRotuloUnitizadorResponse" type="tns:solicitarRotuloUnitizadorResponse" />
+      <xs:element name="solicitarSaldoCliente" type="tns:solicitarSaldoCliente" />
+      <xs:element name="solicitarSaldoClienteResponse" type="tns:solicitarSaldoClienteResponse" />
+      <xs:element name="unitizadorRetornoConsulta" type="tns:unitizadorRetornoConsulta" />
+      <xs:complexType name="solicitarSaldoCliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitarSaldoClienteResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="solicitarSaldoCliente" type="tns:RetornoSaldo" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoSaldo">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="saldo" type="xs:string" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TO" abstract="true">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="Retorno">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:AgrupadorRetorno">
+            <xs:sequence />
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="AgrupadorRetorno">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" ref="tns:ocorrencia" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="Ocorrencia">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoRetorno" type="xs:string" />
+              <xs:element minOccurs="0" name="mensagemRetorno" type="xs:string" />
+              <xs:element minOccurs="0" name="descricaoRetorno" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="WebServiceFaultInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="mensagem" type="xs:string" />
+          <xs:element minOccurs="0" name="excecao" type="xs:string" />
+          <xs:element minOccurs="0" name="classificacao" type="xs:string" />
+          <xs:element minOccurs="0" name="causa" type="xs:string" />
+          <xs:element minOccurs="0" name="stackTrace" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelarRotuloUnitizador">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cancelarRotuloUnitizadorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cancelarRotuloUnitizador" type="tns:RetornoCancelarRotuloUnitizador" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoCancelarRotuloUnitizador">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="itemRetorno" type="tns:ItemRetornoConsultaUnitizador" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ItemRetornoConsultaUnitizador">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoUnitizador" type="xs:string" />
+              <xs:element minOccurs="0" name="numeroExpedicao" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoFaturaEntrega" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="codigosObjeto" type="xs:string" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="consultarUnitizador">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarUnitizadorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="consultarUnitizador" type="tns:RetornoConsultaUnitizador" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoConsultaUnitizador">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="itemRetorno" type="tns:ItemRetornoConsultaUnitizador" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="solicitarCodigoFatura">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitarCodigoFaturaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="solicitarCodigoFatura" type="tns:RetornoCodigoFatura" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoCodigoFatura">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoFaturaEntrega" type="xs:string" />
+              <xs:element minOccurs="0" name="valorSaldo" type="xs:string" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="consultarEncomenda">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarEncomendaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="consultarEncomenda" type="tns:RetornoConsultaEncomenda" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoConsultaEncomenda">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="encomendas" type="tns:AgrupadorItemRetornoConsultaEncomenda" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="AgrupadorItemRetornoConsultaEncomenda">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="encomenda" type="tns:ItemRetornoConsultaEncomenda" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ItemRetornoConsultaEncomenda">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoObjeto" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoFaturaEntrega" type="xs:string" />
+              <xs:element minOccurs="0" name="numeroExpedicao" type="xs:int" />
+              <xs:element minOccurs="0" name="codigoUnitizador" type="xs:string" />
+              <xs:element minOccurs="0" name="nomeRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="enderecoRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="numeroEnderecoRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="complementoEnderecoRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoPostalRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="cidadeRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="estadoRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="paisRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="emailRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="telefoneRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="siteRemetente" type="xs:string" />
+              <xs:element minOccurs="0" name="nomeDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="tipoDocumentoDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="numeroDocumentoDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="enderecoDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="numeroEnderecoDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="complementoEnderecoDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoPostalDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="caixaPostalDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="cidadeDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="ufDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="paisDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="emailDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="telefoneDestinatario" type="xs:string" />
+              <xs:element minOccurs="0" name="pesoObjeto" type="xs:double" />
+              <xs:element minOccurs="0" name="comprimentoObjeto" type="xs:double" />
+              <xs:element minOccurs="0" name="larguraObjeto" type="xs:double" />
+              <xs:element minOccurs="0" name="alturaObjeto" type="xs:double" />
+              <xs:element minOccurs="0" name="modalidadeDistribuicaoObjeto" type="xs:long" />
+              <xs:element minOccurs="0" name="modalidadePagamentoImpostosObjeto" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoMoeda" type="xs:string" />
+              <xs:element minOccurs="0" name="valorFreteObjeto" type="xs:double" />
+              <xs:element minOccurs="0" name="valorSeguroObjeto" type="xs:double" />
+              <xs:element minOccurs="0" name="modoDevolucaoObjeto" type="xs:long" />
+              <xs:element minOccurs="0" name="seguroDevolucaoObjeto" type="xs:string" />
+              <xs:element minOccurs="0" name="itensEncomenda" type="tns:AgrupadorItemEncomenda" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="AgrupadorItemEncomenda">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" ref="tns:itemEncomenda" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ItemEncomenda">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="descricaoItem" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoSHItem" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoSKUItem" type="xs:string" />
+              <xs:element minOccurs="0" name="quantidadeItem" type="xs:long" />
+              <xs:element minOccurs="0" name="valorUnitario" type="xs:double" />
+              <xs:element minOccurs="0" name="pesoUnitario" type="xs:double" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="consultarRestricaoProibicaoItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarRestricaoProibicaoItemResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="consultarRestricaoProibicaoItem" type="tns:RetornoRestricaoProibicao" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoRestricaoProibicao">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="itemRetorno" type="tns:ItemRetornoRestricaoProibicao" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ItemRetornoRestricaoProibicao">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoSHItem" type="xs:string" />
+              <xs:element minOccurs="0" name="permissaoEntrada" type="xs:string" />
+              <xs:element minOccurs="0" name="descricaoPermissaoEntrada" type="xs:string" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="consultaFaturaEntrega">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultaFaturaEntregaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="consultaFaturaEntrega" type="tns:RetornoConsultaFaturaEntregaTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoConsultaFaturaEntregaTO">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="faturas" type="tns:AgrupadorFaturaEntregaRetornoConsulta" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="AgrupadorFaturaEntregaRetornoConsulta">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="fatura" type="tns:faturaEntregaRetornoConsulta" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="faturaEntregaRetornoConsulta">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoFatura" type="xs:string" />
+              <xs:element minOccurs="0" name="expedicoes" type="tns:AgrupadorExpedicaoRetornoConsulta" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="AgrupadorExpedicaoRetornoConsulta">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="expedicao" type="tns:expedicaoRetornoConsulta" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="expedicaoRetornoConsulta">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="numeroExpedicao" type="xs:string" />
+              <xs:element minOccurs="0" name="unitizadores" type="tns:AgrupadorUnitizadorRetornoConsulta" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="AgrupadorUnitizadorRetornoConsulta">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="unitizador" type="tns:unitizadorRetornoConsulta" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="unitizadorRetornoConsulta">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="codigoUnitizador" type="xs:string" />
+              <xs:element minOccurs="0" name="objetos" type="tns:AgrupadorObjetoRetornoConsulta" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="AgrupadorObjetoRetornoConsulta">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="objeto" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="getVersao">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="getVersaoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="versao" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitarCodigoEtiquetaInternacional">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitarCodigoEtiquetaInternacionalResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="solicitarCodigoEtiquetaInternacional" type="tns:RetornoEtiquetaInternacional" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoEtiquetaInternacional">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="itemRetorno" type="tns:ItemRetornoEtiquetaInternacional" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ItemRetornoEtiquetaInternacional">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="numeroEtiquetaObjeto" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoControleCliente" type="xs:string" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="solicitarRotuloUnitizador">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="xml" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="solicitarRotuloUnitizadorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="solicitarRotuloUnitizador" type="tns:RetornoRotuloUnitizador" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RetornoRotuloUnitizador">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+              <xs:element minOccurs="0" name="versao" type="xs:string" />
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="itemRetorno" type="tns:ItemRetornoRotuloUnitizador" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ItemRetornoRotuloUnitizador">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:TO">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="sequencial" type="xs:string" />
+              <xs:element minOccurs="0" name="codigoUnitizador" type="xs:string" />
+              <xs:element minOccurs="0" name="ocorrencias" type="tns:Retorno" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="cancelarRotuloUnitizador">
+    <wsdl:part name="parameters" element="tns:cancelarRotuloUnitizador" />
+  </wsdl:message>
+  <wsdl:message name="cancelarRotuloUnitizadorResponse">
+    <wsdl:part name="parameters" element="tns:cancelarRotuloUnitizadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarUnitizador">
+    <wsdl:part name="parameters" element="tns:consultarUnitizador" />
+  </wsdl:message>
+  <wsdl:message name="solicitarCodigoFatura">
+    <wsdl:part name="parameters" element="tns:solicitarCodigoFatura" />
+  </wsdl:message>
+  <wsdl:message name="consultarEncomenda">
+    <wsdl:part name="parameters" element="tns:consultarEncomenda" />
+  </wsdl:message>
+  <wsdl:message name="solicitarCodigoEtiquetaInternacionalResponse">
+    <wsdl:part name="parameters" element="tns:solicitarCodigoEtiquetaInternacionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarUnitizadorResponse">
+    <wsdl:part name="parameters" element="tns:consultarUnitizadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultaFaturaEntregaResponse">
+    <wsdl:part name="parameters" element="tns:consultaFaturaEntregaResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitarCodigoFaturaResponse">
+    <wsdl:part name="parameters" element="tns:solicitarCodigoFaturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVersao">
+    <wsdl:part name="parameters" element="tns:getVersao" />
+  </wsdl:message>
+  <wsdl:message name="solicitarCodigoEtiquetaInternacional">
+    <wsdl:part name="parameters" element="tns:solicitarCodigoEtiquetaInternacional" />
+  </wsdl:message>
+  <wsdl:message name="solicitarSaldoCliente">
+    <wsdl:part name="parameters" element="tns:solicitarSaldoCliente" />
+  </wsdl:message>
+  <wsdl:message name="consultarEncomendaResponse">
+    <wsdl:part name="parameters" element="tns:consultarEncomendaResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarRestricaoProibicaoItemResponse">
+    <wsdl:part name="parameters" element="tns:consultarRestricaoProibicaoItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="getVersaoResponse">
+    <wsdl:part name="parameters" element="tns:getVersaoResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitarRotuloUnitizadorResponse">
+    <wsdl:part name="parameters" element="tns:solicitarRotuloUnitizadorResponse" />
+  </wsdl:message>
+  <wsdl:message name="consultarRestricaoProibicaoItem">
+    <wsdl:part name="parameters" element="tns:consultarRestricaoProibicaoItem" />
+  </wsdl:message>
+  <wsdl:message name="ComponenteException">
+    <wsdl:part name="ComponenteException" element="tns:WebServiceFaultInfo" />
+  </wsdl:message>
+  <wsdl:message name="consultaFaturaEntrega">
+    <wsdl:part name="parameters" element="tns:consultaFaturaEntrega" />
+  </wsdl:message>
+  <wsdl:message name="solicitarSaldoClienteResponse">
+    <wsdl:part name="parameters" element="tns:solicitarSaldoClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="solicitarRotuloUnitizador">
+    <wsdl:part name="parameters" element="tns:solicitarRotuloUnitizador" />
+  </wsdl:message>
+  <wsdl:portType name="edeiService">
+    <wsdl:operation name="solicitarSaldoCliente">
+      <wsdl:input name="solicitarSaldoCliente" message="tns:solicitarSaldoCliente" />
+      <wsdl:output name="solicitarSaldoClienteResponse" message="tns:solicitarSaldoClienteResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelarRotuloUnitizador">
+      <wsdl:input name="cancelarRotuloUnitizador" message="tns:cancelarRotuloUnitizador" />
+      <wsdl:output name="cancelarRotuloUnitizadorResponse" message="tns:cancelarRotuloUnitizadorResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarUnitizador">
+      <wsdl:input name="consultarUnitizador" message="tns:consultarUnitizador" />
+      <wsdl:output name="consultarUnitizadorResponse" message="tns:consultarUnitizadorResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCodigoFatura">
+      <wsdl:input name="solicitarCodigoFatura" message="tns:solicitarCodigoFatura" />
+      <wsdl:output name="solicitarCodigoFaturaResponse" message="tns:solicitarCodigoFaturaResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarEncomenda">
+      <wsdl:input name="consultarEncomenda" message="tns:consultarEncomenda" />
+      <wsdl:output name="consultarEncomendaResponse" message="tns:consultarEncomendaResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultarRestricaoProibicaoItem">
+      <wsdl:input name="consultarRestricaoProibicaoItem" message="tns:consultarRestricaoProibicaoItem" />
+      <wsdl:output name="consultarRestricaoProibicaoItemResponse" message="tns:consultarRestricaoProibicaoItemResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="consultaFaturaEntrega">
+      <wsdl:input name="consultaFaturaEntrega" message="tns:consultaFaturaEntrega" />
+      <wsdl:output name="consultaFaturaEntregaResponse" message="tns:consultaFaturaEntregaResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="getVersao">
+      <wsdl:input name="getVersao" message="tns:getVersao" />
+      <wsdl:output name="getVersaoResponse" message="tns:getVersaoResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCodigoEtiquetaInternacional">
+      <wsdl:input name="solicitarCodigoEtiquetaInternacional" message="tns:solicitarCodigoEtiquetaInternacional" />
+      <wsdl:output name="solicitarCodigoEtiquetaInternacionalResponse" message="tns:solicitarCodigoEtiquetaInternacionalResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+    <wsdl:operation name="solicitarRotuloUnitizador">
+      <wsdl:input name="solicitarRotuloUnitizador" message="tns:solicitarRotuloUnitizador" />
+      <wsdl:output name="solicitarRotuloUnitizadorResponse" message="tns:solicitarRotuloUnitizadorResponse" />
+      <wsdl:fault name="ComponenteException" message="tns:ComponenteException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="edeiSoapBinding" type="tns:edeiService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="solicitarSaldoCliente">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="solicitarSaldoCliente">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="solicitarSaldoClienteResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelarRotuloUnitizador">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="cancelarRotuloUnitizador">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="cancelarRotuloUnitizadorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarUnitizador">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="consultarUnitizador">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="consultarUnitizadorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCodigoFatura">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="solicitarCodigoFatura">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="solicitarCodigoFaturaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarEncomenda">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="consultarEncomenda">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="consultarEncomendaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultarRestricaoProibicaoItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="consultarRestricaoProibicaoItem">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="consultarRestricaoProibicaoItemResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="consultaFaturaEntrega">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="consultaFaturaEntrega">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="consultaFaturaEntregaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersao">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getVersao">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getVersaoResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarCodigoEtiquetaInternacional">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="solicitarCodigoEtiquetaInternacional">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="solicitarCodigoEtiquetaInternacionalResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="solicitarRotuloUnitizador">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="solicitarRotuloUnitizador">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="solicitarRotuloUnitizadorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ComponenteException">
+        <soap:fault use="literal" name="ComponenteException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="edei">
+    <wsdl:port name="edeiServicePort" binding="tns:edeiSoapBinding">
+      <soap:address location="https://apphom.correios.com.br/edeiWS/edei/edeiService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
