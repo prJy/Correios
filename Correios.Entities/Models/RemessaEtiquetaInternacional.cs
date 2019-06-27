@@ -10,9 +10,9 @@ namespace Correios.Entities.Models
     public class RemessaEtiquetaInternacional
     {
         [XmlElement(ElementName = "idioma")]
-        [Required(ErrorMessage = "{0} is required")]
+        [Required(ErrorMessage = "{0} is required")]        
         [StringRange(AllowableValues = new[] { "PT", "EN" }, ErrorMessage = "{0} must be either 'PT' or 'EN'.")]
-
+        [MaxLength(2, ErrorMessage = "Maximum characters are {1}}")]
         public string Idioma { get; set; }
         [XmlElement(ElementName = "encomendas")]        
         public EncomendasEtiquetaInternacional Encomendas { get; set; }

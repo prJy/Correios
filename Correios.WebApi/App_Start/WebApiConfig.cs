@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Correios.WebApi.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -11,6 +12,7 @@ namespace Correios.WebApi
         {
             // Web API configuration and services
 
+            config.Filters.Add(new ValidateModelAttribute());
             // Web API routes
             config.MapHttpAttributeRoutes();
 

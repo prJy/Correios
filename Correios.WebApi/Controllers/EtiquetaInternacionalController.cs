@@ -9,6 +9,7 @@ using Correios.Entities.Extensions;
 using Correios.Entities.Models;
 using Correios.Services;
 using Correios.Services.WebService;
+using Correios.WebApi.Filters;
 
 namespace Correios.WebApi.Controllers
 {
@@ -73,6 +74,8 @@ namespace Correios.WebApi.Controllers
          }
         }
        */
+        [ValidateModel]
+        [Route("api/etiqueta/solicitar/internacional")]
         [HttpPost]        
         public RetornoEtiquetaInternacional Post([FromBody]RemessaEtiquetaInternacional remessa)
         {        
