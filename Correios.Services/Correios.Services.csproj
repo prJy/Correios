@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientWS.cs" />
+    <Compile Include="Encomenda\EncomendaService.cs" />
     <Compile Include="Etiqueta\EtiquetaService.cs" />
     <Compile Include="Fatura\FaturaService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
