@@ -55,7 +55,7 @@ Example api/etiqueta/internacional
   }
 }
 ```
-Example api/
+Example api/etiqueta/rotulo/unitizador
 
 ```json
 {
