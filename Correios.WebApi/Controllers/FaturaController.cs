@@ -1,0 +1,20 @@
+﻿using Correios.Entities.Models.Fatura;
+using Correios.Services.Fatura;
+using Correios.Services.WebService;
+using System.Web.Http;
+using Correios.Entities.Extensions;
+
+namespace Correios.WebApi.Controllers
+{
+    public class FaturaController : ApiController
+    {
+        [Route("api/etiqueta/fatura")]
+        [HttpPost]
+        public RetornoCodigoFatura Post([FromBody]SolicitarCodigoFatura remessa)
+        {
+            var service = new FaturaService();
+            var resultado = service.SolicitarFaturaEntrega(remessa.ToXml());
+            return resultado;
+        }
+    }
+}
