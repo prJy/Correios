@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Correios.Entities.Models
+namespace Correios.Entities.Models.Etiqueta
 {
     [XmlRoot(ElementName = "encomenda")]
-    public class EncomendaEtiquetaInternacional
+    public class EtiquetaEncomenda
     {
         [XmlElement(ElementName = "cartaoDePostagem")]
         public string CartaoDePostagem { get; set; }
@@ -83,6 +83,6 @@ namespace Correios.Entities.Models
         [XmlElement(ElementName = "seguroDevolucaoObjeto")]
         public string SeguroDevolucaoObjeto { get; set; }
         [XmlElement(ElementName = "itensEncomenda")]
-        public ItensEncomendaEtiquetaInternacional ItensEncomenda { get; set; }
+        public EtiquetaItensEncomenda ItensEncomenda { get; set; }
     }
 }
