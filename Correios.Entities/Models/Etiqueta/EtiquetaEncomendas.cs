@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Correios.Entities.Models
+namespace Correios.Entities.Models.Etiqueta
 {
     [XmlRoot(ElementName = "encomendas")]
-    public class EncomendasEtiquetaInternacional
+    public class Encomendas
     {
         [XmlElement(ElementName = "encomenda")]
-        public EncomendaEtiquetaInternacional Encomenda { get; set; }
+        public EtiquetaEncomenda Encomenda { get; set; }
     }
 }

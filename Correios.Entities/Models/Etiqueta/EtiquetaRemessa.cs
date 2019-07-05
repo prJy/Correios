@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Correios.Entities.ExtendedModels;
 
-namespace Correios.Entities.Models
+namespace Correios.Entities.Models.Etiqueta
 {
     [XmlRoot(ElementName = "remessa")]
-    public class RemessaEtiquetaInternacional
+    public class EtiquetaRemessa
     {
         [XmlElement(ElementName = "idioma")]
         [Required(ErrorMessage = "{0} is required")]        
@@ -15,6 +15,6 @@ namespace Correios.Entities.Models
         [MaxLength(2, ErrorMessage = "Maximum characters are {1}}")]
         public string Idioma { get; set; }
         [XmlElement(ElementName = "encomendas")]        
-        public EncomendasEtiquetaInternacional Encomendas { get; set; }
+        public Encomendas Encomendas { get; set; }
     }
 }

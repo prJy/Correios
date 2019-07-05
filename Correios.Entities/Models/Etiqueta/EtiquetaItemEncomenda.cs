@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace Correios.Entities.Models
+namespace Correios.Entities.Models.Etiqueta
 {
     [XmlRoot(ElementName = "itemEncomenda")]
-    public class ItemEncomendaEtiquetaInternacional
+    public class EtiquetaItemEncomenda
     {
         [XmlElement(ElementName = "codigoSHItem")]
         public string CodigoSHItem { get; set; }

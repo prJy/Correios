@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Correios.Entities.Extensions;
 using Correios.Services.WebService;
 
-namespace Correios.Services
+namespace Correios.Services.Etiqueta
 {
-    public class EtiquetaInternacionalService
+    public class EtiquetaService
     {      
         public RetornoEtiquetaInternacional SolicitarCodigoEtiquetaInternacional(string remessa) {            
             RetornoEtiquetaInternacional resultado = ClientWS.Instance().solicitarCodigoEtiquetaInternacional(remessa);            
