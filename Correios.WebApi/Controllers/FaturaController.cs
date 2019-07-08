@@ -16,5 +16,14 @@ namespace Correios.WebApi.Controllers
             var resultado = service.SolicitarFaturaEntrega(remessa.ToXml());
             return resultado;
         }
+
+        [Route("api/etiqueta/fatura/entrega")]
+        [HttpGet]
+        public RetornoConsultaFaturaEntregaTO ConsultarFaturaEntrega([FromUri]ConsultaFaturaEntrega remessa)
+        {
+            var service = new FaturaService();
+            var resultado = service.ConsultaFaturaEntrega(remessa.ToXml());
+            return resultado;
+        }
     }
 }

@@ -168,6 +168,8 @@
     <Compile Include="Controllers\EtiquetaInternacionalController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RestricaoController.cs" />
+    <Compile Include="Controllers\SaldoClienteController.cs" />
     <Compile Include="Controllers\UnitizadorController.cs" />
     <Compile Include="Filters\ValidateModelAttribute.cs" />
     <Compile Include="Global.asax.cs">

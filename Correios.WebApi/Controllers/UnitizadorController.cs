@@ -1,10 +1,5 @@
 ﻿using Correios.Entities.Models.Unitizador;
 using Correios.Services.WebService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using Correios.Entities.Extensions;
 using Correios.Services.Unitizador;
@@ -28,6 +23,15 @@ namespace Correios.WebApi.Controllers
         {
             var service = new UnitizadorService();
             var resultado = service.ConsultaUnitizador(remessa.ToXml());
+            return resultado;
+        }
+
+        [Route("api/etiqueta/unitizador/rotulo/cancelar")]
+        [HttpPost]
+        public RetornoCancelarRotuloUnitizador CancelarRotuloUnitizador([FromBody]CancelaRotuloUnitizador remessa)
+        {
+            var service = new UnitizadorService();
+            var resultado = service.CancelarRotuloUnitizador(remessa.ToXml());
             return resultado;
         }
     }

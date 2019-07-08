@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente\SaldoClienteService.cs" />
     <Compile Include="ClientWS.cs" />
     <Compile Include="Encomenda\EncomendaService.cs" />
     <Compile Include="Etiqueta\EtiquetaService.cs" />
@@ -55,6 +56,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Restricao\ItemService.cs" />
     <Compile Include="Unitizador\UnitizadorService.cs" />
     <Compile Include="Web References\WebService\Reference.cs">
       <AutoGen>True</AutoGen>

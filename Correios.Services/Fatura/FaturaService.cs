@@ -14,5 +14,11 @@ namespace Correios.Services.Fatura
             RetornoCodigoFatura retorno = ClientWS.Instance().solicitarCodigoFatura(xml);
             return retorno;
         }
+
+        public RetornoConsultaFaturaEntregaTO ConsultaFaturaEntrega(string xml)
+        {
+            RetornoConsultaFaturaEntregaTO retorno = ClientWS.Instance().consultaFaturaEntrega(xml);
+            return retorno;
+        }
     }
 }
