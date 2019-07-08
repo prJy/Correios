@@ -9,6 +9,6 @@ namespace Correios.Entities.Models.Encomenda
     public class CodigosRastreamentoObjeto
     {
         [XmlElement(ElementName = "codigoRastreamentoObjeto")]
-        public string CodigoRastreamentoObjeto { get; set; }
+        public List<string> CodigoRastreamentoObjeto { get; set; }
     }
 }

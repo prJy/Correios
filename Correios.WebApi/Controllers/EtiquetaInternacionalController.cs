@@ -12,7 +12,7 @@ namespace Correios.WebApi.Controllers
         [ValidateModel]
         [Route("api/etiqueta/internacional")]
         [HttpPost]        
-        public RetornoEtiquetaInternacional Post([FromBody]EtiquetaRemessa remessa)
+        public RetornoEtiquetaInternacional SolicitarCodigoEtiquetaInternacional([FromBody]EtiquetaRemessa remessa)
         {        
             var service = new EtiquetaService();
             var resultado = service.SolicitarCodigoEtiquetaInternacional(remessa.ToXml());

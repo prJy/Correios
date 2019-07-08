@@ -10,7 +10,7 @@ namespace Correios.WebApi.Controllers
     {
         [Route("api/etiqueta/fatura")]
         [HttpPost]
-        public RetornoCodigoFatura Post([FromBody]SolicitarCodigoFatura remessa)
+        public RetornoCodigoFatura SolicitarFaturaEntrega([FromBody]SolicitarCodigoFatura remessa)
         {
             var service = new FaturaService();
             var resultado = service.SolicitarFaturaEntrega(remessa.ToXml());
