@@ -11,8 +11,8 @@ namespace Correios.WebApi.Controllers
     {
         [ValidateModel]
         [Route("api/encomenda/")]
-        [HttpPost]
-        public RetornoConsultaEncomenda Post([FromBody]ConsultaEncomenda remessa)
+        [HttpGet]
+        public RetornoConsultaEncomenda ConsultarEncomenda([FromUri]ConsultaEncomenda remessa)
         {
             var service = new EncomendaService();
             var resultado = service.ConsultarEncomenda(remessa.ToXml());

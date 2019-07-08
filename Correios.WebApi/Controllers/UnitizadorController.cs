@@ -13,12 +13,21 @@ namespace Correios.WebApi.Controllers
 {
     public class UnitizadorController : ApiController
     {
-        [Route("api/etiqueta/rotulo/unitizador")]
+        [Route("api/etiqueta/unitizador/rotulo")]
         [HttpPost]
-        public RetornoRotuloUnitizador Post([FromBody]UnitizadorRemessa remessa)
+        public RetornoRotuloUnitizador SolicitarRotuloUnitizador([FromBody]UnitizadorRemessa remessa)
         {
             var service = new UnitizadorService();
             var resultado = service.SolicitarRotuloUnitizador(remessa.ToXml());
+            return resultado;
+        }
+
+        [Route("api/etiqueta/unitizador")]
+        [HttpGet]
+        public RetornoConsultaUnitizador ConsultarUnitizador([FromUri]UnitizadorConsulta remessa)
+        {
+            var service = new UnitizadorService();
+            var resultado = service.ConsultaUnitizador(remessa.ToXml());
             return resultado;
         }
     }
